@@ -1,0 +1,10 @@
+[
+null,
+{"id":1,"expanded":true,"name":"INIT","order":2,"parentId":0,"scrollX":411.55555555555554,"scrollY":320.8888888888889},
+{"id":2,"expanded":true,"name":"WHITE SPACE","order":6,"parentId":6,"scrollX":819,"scrollY":1302.5,"quick":false},
+{"id":3,"expanded":false,"name":"ENCOUNTERS","order":1,"parentId":0,"scrollX":0,"scrollY":0,"quick":false},
+{"id":4,"expanded":false,"name":"DEVELOPER'S ROOM","order":3,"parentId":1,"scrollX":0,"scrollY":0,"quick":false},
+{"id":5,"expanded":true,"name":"LOGO","order":4,"parentId":1,"scrollX":619,"scrollY":340.5,"quick":false},
+{"id":6,"expanded":true,"name":"INTRO","order":5,"parentId":5,"scrollX":811,"scrollY":457.5,"quick":false},
+{"id":7,"expanded":false,"name":"NEIGHBOR'S ROOM","order":7,"parentId":2,"scrollX":811,"scrollY":477.5,"quick":false}
+]

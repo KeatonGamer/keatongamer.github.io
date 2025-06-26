@@ -1,0 +1,11 @@
+[
+null,
+{"id":1,"battlerName":"Actor1_1","characterIndex":4,"characterName":"","classId":1,"equips":[2,0,0,3,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"OMORI","nickname":"","note":"","profile":""},
+{"id":2,"battlerName":"Actor1_2","characterIndex":0,"characterName":"[DW]PartyMembers","classId":2,"equips":[1,0,0,9,0],"faceIndex":0,"faceName":"Btskin_face_2","traits":[],"initialLevel":1,"maxLevel":99,"name":"AUBREY","nickname":"","note":"","profile":""},
+{"id":3,"battlerName":"Actor1_3","characterIndex":2,"characterName":"[DW]PartyMembers","classId":3,"equips":[31,0,65,5,0],"faceIndex":0,"faceName":"Btskin_face_3","traits":[],"initialLevel":1,"maxLevel":99,"name":"KELSEY","nickname":"","note":"","profile":""},
+{"id":4,"battlerName":"Actor1_4","characterIndex":4,"characterName":"[DW]PartyMembers","classId":4,"equips":[31,0,0,5,0],"faceIndex":0,"faceName":"Btskin_face_4","traits":[],"initialLevel":1,"maxLevel":99,"name":"HERO","nickname":"","note":"","profile":""},
+{"id":5,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":6,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":7,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""},
+{"id":8,"battlerName":"","characterIndex":0,"characterName":"","classId":1,"equips":[0,0,0,0,0],"faceIndex":0,"faceName":"","traits":[],"initialLevel":1,"maxLevel":99,"name":"","nickname":"","note":"","profile":""}
+]
