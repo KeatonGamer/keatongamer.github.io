@@ -1,0 +1,81 @@
+:root {
+  --font-family-sans: system-ui, -apple-system, 'Segoe UI', 'Roboto', Ubuntu, Cantarell, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-family-serif: Georgia, 'Times New Roman', serif;
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  --font-family-cursive: cursive;
+  --body-width: 48rem;
+  --typescale-body: 1.0;
+  --typescale-heading: 1.0;
+  --spacing-heading: 1rem;
+  --space-ratio: 1.2;
+  --space-base: 1;
+  --space-base-px: 12px;
+  --space-base-em: 1em;
+  --space-base-rem: 1rem;
+  --spacescale0: 1;
+  --spacescale1: var(--space-ratio);
+  --spacescale2: calc(var(--space-ratio) * var(--spacescale1));
+  --spacescale3: calc(var(--space-ratio) * var(--spacescale2));
+  --spacescale4: calc(var(--space-ratio) * var(--spacescale3));
+  --spacescale5: calc(var(--space-ratio) * var(--spacescale4));
+  --spacescale6: calc(var(--space-ratio) * var(--spacescale5));
+  --spacescale7: calc(var(--space-ratio) * var(--spacescale6));
+  --space-base: var(--space-base-rem);
+  --space-half: calc(var(--space-base-rem) * 0.125);
+  --space-quarter: calc(var(--space-base-rem) * 0.025);
+  --space-double: calc(var(--space-base-rem) * 0.25);
+  --font-family: var(--font-family-sans);
+  --font-family-headings: var(--font-family-sans);
+  --font-size: 12px;
+  --font-size-small: 90%;
+  --font-size-smaller: 80%;
+  --font-size-smallest: 60%;
+  --font-size-large: 100%;
+  --font-size-larger: 110%;
+  --line-height: 1.5;
+  --line-height-heading: 1.25;
+  --border-width: 1px;
+  --border-width-alt: 3px;
+  --border-radius: 0.3rem;
+  --border-radius-high: 0.7rem;
+  --border-radius-round: 100%;
+  --image-width-max: 1200px;
+  --color-black: #000000;
+  --color-white: #ffffff; 
+  --background-color-accent: var(--color-accent);
+  --border-color: var(--background-color-highlight);
+  --border-color-highlight: var(--color-primary);
+  --text-color-link: var(--color-primary);
+  --text-color-link-visited: var(--text-color-link);
+  --text-color-link-hover: var(--color-secondary);
+  --text-color-link-active: var(--text-color-link-hover);
+  --form-button-text-color: var(--background-color-alt);
+  --form-button-background-color: var(--color-primary);
+  --opacity-no: 1;
+  --opacity-low: 0.9;
+  --opacity-lower: 0.75;
+  --opacity-lowest: 0.6;
+  --transition-duration: 0.4s
+}
+body {
+  color: var(--text-color);
+  background: var(--background-color);
+  font-family: var(--font-family);
+  font-size: calc(var(--font-size) * var(--typescale-body));
+  line-height: var(--line-height);
+  display: block;
+  min-height: 100vh;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 auto;
+  padding: 0 var(--space-half);
+  max-width: 320px;
+  height: 100%;
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  transition: background 500ms ease-in-out, color 200ms ease
+}
+hr {
+  border-top:1px dotted #000;
+}
