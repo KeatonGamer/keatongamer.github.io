@@ -1,0 +1,9 @@
+Package: com.keatongamer.ogdr
+Name: OMORI GR2 DEMO RECREATION
+Version: 1.0
+Architecture: iphoneos-arm
+Description: A recreation based off of a surreal, horror RPG!
+Homepage: http://keatongamer.github.io/cydia
+Maintainer: KeatonGamer
+Author: KeatonGamer <http://keatongamer.github.io/cydia>
+Section: Games
