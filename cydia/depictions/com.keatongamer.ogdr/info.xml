@@ -1,0 +1,24 @@
+<package>
+    <id>com.keatongamer.ogdr</id>
+    <name>OMORI GR2 DEMO RECREATION</name>
+    <version>1.0.0-1</version>
+    <compatibility>
+        <firmware>
+            <miniOS>8.4.1</miniOS>
+            <maxiOS>10.3.3</maxiOS>
+            <otherVersions>unsupported</otherVersions>
+            <!--
+            for otherVersions, you can put either unsupported or unconfirmed
+            -->
+        </firmware>
+    </compatibility>
+    <dependencies></dependencies>
+    <descriptionlist>
+        <description>A recreation based off of a surreal, horror RPG!</description>
+    </descriptionlist>
+    <screenshots></screenshots>
+    <changelog>
+        <change>Initial release</change>
+    </changelog>
+    <links></links>
+</package>
