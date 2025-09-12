@@ -3,12 +3,12 @@
 		<link>
 			<name>Blue Sky</name>
 			<url>http://bsky.app/profile/did:plc:cheh2xv4asel4cjfknatfccc</url>
-			<iconclass>fa fa-bluesky</iconclass>
+			<iconclass>fa-brands fa-bluesky</iconclass>
 		</link>
 		<link>
 			<name>Tumblr</name>
 			<url>http://keatongamer.tumblr.com</url>
-			<iconclass>fa fa-tumblr</iconclass>
+			<iconclass>fa-brands fa-tumblr</iconclass>
 		</link>
 	</footerlinks>
 </repo>
