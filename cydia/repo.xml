@@ -2,11 +2,13 @@
 	<footerlinks>
 		<link>
 			<name>Blue Sky</name>
-			<url>https://bsky.app/profile/did:plc:cheh2xv4asel4cjfknatfccc</url>
+			<url>http://bsky.app/profile/did:plc:cheh2xv4asel4cjfknatfccc</url>
 			<iconclass>fa fa-twitter</iconclass>
 		</link>
 		<link>
-			<name>
+			<name>Tumblr</name>
+			<url>http://keatongamer.tumblr.com</url>
+			<iconclass>fa fa-tumblr</iconclass>
 		</link>
 	</footerlinks>
 </repo>
