@@ -1,0 +1,20 @@
+type: generals
+version: 0.1.0
+
+improvements:
+  WindowSkinTileMode: tile # tile or stretch
+
+  # Hide Battle Status when targeting actor
+  HideBattleStatusOnSelectActor: true
+
+  # Use default battle log background
+  BattleLogDefaultBackground: false
+
+  # Battle Command sticky position for sideview
+  #
+  # default - Default positioning
+  # top | bottom | left | right - sticky position on sideview battler
+  BattleCommandStickyPosition: default
+  BattleCommandStickyOffsets:
+    x: 0
+    y: 0

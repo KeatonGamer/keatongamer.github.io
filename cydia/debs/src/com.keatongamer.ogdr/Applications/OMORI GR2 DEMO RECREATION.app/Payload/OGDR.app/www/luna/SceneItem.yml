@@ -1,0 +1,741 @@
+type: scene
+version: 0.1.0
+
+components:
+  Background:
+    type: Background
+    x:
+      type: percentage
+      value: 0
+    y:
+      type: percentage
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    background:
+      type: default
+	  
+
+
+  # Item Category
+  ItemCategory:
+    type: window
+    x:
+      type: fixed
+      value: 0
+    y:
+      type: fixed
+      value: 0
+    verticalAtlas: 4
+    anchor:
+      x: 0
+      y: 0
+  
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    fontName: default
+    fontSize: default
+    fontOutline: default
+    fontShadow: default
+
+    lineHeight: 36
+    textPadding: default
+    windowPadding: default
+    spacing: 0
+
+    windowSkin: 0
+    cursor: default
+    customBackground:
+      enable: false
+      image: none
+
+    columns: 1
+
+  # Item List
+  ItemList:
+    type: window
+    x:
+      type: fixed
+      value: 45
+    y:
+      type: fixed
+      value: 52
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: fixed
+      value: 510
+    height:
+      type: fixed
+      value: 260
+	 
+
+    fontName: default
+    fontSize: default
+    fontOutline: default
+    fontShadow: default
+
+    lineHeight: 86
+    textPadding: default
+    windowPadding: 0
+
+
+    windowSkin: 0
+    cursor: default
+    customBackground:
+      enable: false
+      image: none
+	  
+    verticalAtlas: 3
+
+    columns: 5 # max for horizontal menu
+
+  # Menu Actor
+  MenuActor:
+    type: Window
+    x:
+      type: percentage
+      value: 0
+    y:
+      type: percentage
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: fixed
+      value: 640
+    height:
+      type: fixed
+      value: 480
+
+    fontName: default
+    fontSize: default
+    fontOutline: default
+    fontShadow: default
+
+    lineHeight: default
+    textPadding: default
+    windowPadding: default
+
+    gaugeOffset: default
+    gaugeHeight: default
+    gaugeOutline: default
+    gaugeSlanted: default
+
+    windowSkin: 0
+    cursor: default
+    customBackground:
+      enable: false
+      image: 0
+
+    columns: 1 # max for horizontal menu
+	
+
+  # Help Window
+  Help:
+    type: Window
+    x:
+      type: percentage
+      value: 0
+    y:
+      type: percentage
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: fitLines
+      value: 3
+
+    fontName: RistrettoPro-Regular
+    fontSize: 25
+    fontOutline: -5
+    fontShadow: default
+	
+    textColor: rgb(0, 0, 0)
+
+    lineHeight: default
+    textPadding: 40
+    windowPadding: 20
+
+    windowSkin: 0
+    cursor: default
+    customBackground:
+      enable: true
+      image: Inventory_Base
+
+layouts:
+  MainLayout:
+    type: FreeLayout
+    components:
+      - Background
+      - ItemLayout
+      - ItemCategory
+      - ActorsLayout
+	  
+  ItemLayout:
+    type: VerticalLayout
+    x:
+      type: fixed
+      value: 0
+    y:
+      type: fixed
+      value: 0
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+    components:
+      - Help
+      - ItemList
+
+  ActorsLayout:
+    type: FreeLayout
+    x:
+      type: fixed
+      value: -15
+    y:
+      type: fixed
+      value: 0
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+    components:
+      - MenuActor
+
+events:
+  onSceneEnter:
+    # nothing here
+	
+	
+lunatic:
+
+ ItemCategory:
+  enable: true
+  components: 
+   MenuList:
+    type: image
+    x:
+      type: fixed
+      value: 456
+    y:
+      type: fixed
+      value: -12
+    verticalAtlas: 4
+    anchor:
+      x: 0
+      y: 0
+	  
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    itemList: ${data}
+	
+    imageName: "Inventory_MenuIdle"
+
+    conditions:
+      isSelect:
+        condition: isSelect
+        config:
+          imageName: "Inventory_MenuSelect"
+		  
+  contents:
+   type: FreeLayout
+   components: []
+	
+  lunaticItems:
+   itemList: ${data}
+   template:
+     type: FreeLayout
+     components:
+       - MenuList
+	   
+ ItemList:
+  enable: true
+  additionMode: true
+  components: 
+   ItemWindow:
+
+    type: image
+    x:
+      type: fixed
+      value: 0
+    y:
+      type: fixed
+      value: 0
+
+
+    anchor:
+      x: 0
+      y: 0
+	  
+    width:
+      type: fixed
+      value: 110
+    height:
+      type: fixed
+      value: 86
+	  
+    imageName: "Inventory_Item"
+	
+    conditions:
+      isSelect:
+        condition: isSelect
+        config:
+          imageName: "Inventory_Item-Select"
+          x: 
+            type: fixed
+            value: -2
+          y: 
+            type: fixed
+            value: -4
+	
+   ItemIcon:
+    type: icon
+    x:
+      type: fixed
+      value: 21
+    y:
+      type: fixed
+      value: 14
+    anchor:
+      x: 0
+      y: 0
+
+    iconSet: "IconSet"
+    iconIndex: "${data.iconIndex}"
+	
+    conditions:
+      isSelect:
+        condition: isSelect
+        config:
+          x: 
+            type: fixed
+            value: 21
+          y: 
+            type: fixed
+            value: 10
+	
+   ItemName:
+    type: text
+    x:
+      type: fixed
+      value: 10
+    y:
+      type: fixed
+      value: 48
+    anchor:
+      x: 0
+      y: 0
+    fontName: RistrettoPro-Regular
+    fontSize: 20
+    fontOutline: -5
+    fontShadow: default
+
+    lineHeight: default
+    textPadding: default
+    windowPadding: default
+    spacing: 0
+    textColor: rgb(0, 0, 0)
+    text: "${data.name}"
+	
+    conditions:
+      isSelect:
+        condition: isSelect
+        config:
+          x: 
+            type: fixed
+            value: 10
+          y: 
+            type: fixed
+            value: 45
+			
+   ItemQuantity:
+    type: text
+    x:
+      type: fixed
+      value: 58
+    y:
+      type: fixed
+      value: 13
+    anchor:
+      x: 0
+      y: 0
+    fontName: RistrettoPro-Regular
+    fontSize: 24
+    fontOutline: -5
+    fontShadow: default
+
+    lineHeight: default
+    textPadding: default
+    windowPadding: default
+    spacing: 0
+    textColor: rgb(0, 0, 0)
+    text: "x${party.numItems(data)}"
+	
+    conditions:
+      isSelect:
+        condition: isSelect
+        config:
+          x: 
+            type: fixed
+            value: 58
+          y: 
+            type: fixed
+            value: 10
+
+  contents:
+   type: FreeLayout
+   components: []
+	   
+  lunaticItems:
+   template:
+     type: FreeLayout
+     components: 
+       - ItemWindow
+       - ItemIcon
+       - ItemName
+       - ItemQuantity
+
+# ------------------------------------ 
+	   
+ MenuActor:
+ 
+   enable: true
+   components:
+     ActorBG:
+      type: image
+      x:
+        type: fixed
+        value: 0
+      y:
+        type: fixed
+        value: -16
+      imageName: Inventory_ActorSelect
+     ActorHP:
+      type: Text
+      x:
+        type: fixed
+        value: 20
+      y:
+        type: fixed
+        value: 360
+      anchor:
+        x: 1
+        y: 0
+      rotation: 270
+      bind: true
+      fontName: RistrettoPro-Regular
+      fontSize: 20
+      textColor: rgb(255, 255, 255)
+      text: "${data.hp}/${data.mhp}"
+
+     ActorHPGauge:
+       type: gauge
+       x:
+         type: fixed
+         value: 13
+       y:
+         type: fixed
+         value: 408
+       anchor:
+         x: 0
+         y: 0
+       pivot:
+         x: 0
+         y: 0
+       rotation: 270
+       bind: true
+       width:
+         type: fixed
+         value: 291
+       height:
+         type: fixed
+         value: 46
+
+       gaugeOutline:
+         enable: true
+         lineWidth: 1
+         lineColor: rgba(16, 16, 16, 1)
+       gaugeColor1: "rgb(205, 0, 141)"
+       gaugeColor2: "rgb(255, 98, 141)"
+
+       rate: ${data.hpRate}
+
+     ActorMP:
+       type: Text
+       x:
+         type: fixed
+         value: 75
+       y:
+         type: fixed
+         value: 360
+       anchor:
+         x: 1
+         y: 0
+       rotation: 270
+       bind: true
+       fontName: RistrettoPro-Regular
+       fontSize: 20
+       textColor: rgb(255, 255, 255)
+       text: "${data.mp}/${data.mmp}"
+	  
+     ActorMPGauge:
+       type: gauge
+       x:
+         type: fixed
+         value: 67
+       y:
+         type: fixed
+         value: 408
+       anchor:
+         x: 0
+         y: 0
+       pivot:
+         x: 0
+         y: 0
+       rotation: 270
+       bind: true
+       width:
+         type: fixed
+         value: 291
+       height:
+         type: fixed
+         value: 46
+
+       gaugeOutline:
+         enable: true
+         lineWidth: 1
+         lineColor: rgba(16, 16, 16, 1)
+       gaugeColor1: "rgb(5, 37, 223)"
+       gaugeColor2: "rgb(55, 137, 223)"
+
+       rate: ${data.mpRate}
+	   
+     ActorEXPGauge:
+       type: gauge
+       x:
+         type: fixed
+         value: 121
+       y:
+         type: fixed
+         value: 408
+       anchor:
+         x: 0
+         y: 0
+       pivot:
+         x: 0
+         y: 0
+       rotation: 270
+       bind: true
+       width:
+         type: fixed
+         value: 291
+       height:
+         type: fixed
+         value: 46
+
+       gaugeOutline:
+         enable: true
+         lineWidth: 1
+         lineColor: rgba(16, 16, 16, 1)
+       gaugeColor1: "rgb(173, 53, 55)"
+       gaugeColor2: "rgb(223, 153, 55)"
+
+       rate: ${data.expRate()}
+     ActorEXP:
+       type: Text
+       x:
+         type: fixed
+         value: 129
+       y:
+         type: fixed
+         value: 360
+       anchor:
+         x: 1
+         y: 0
+       rotation: 270
+       bind: true
+       fontName: RistrettoPro-Regular
+       fontSize: 20
+       textColor: rgb(255, 255, 255)
+       text: "${actor.currentExp}/${actor.nextLevelExp}"
+
+     ActorPicture:
+      type: Image
+      x:
+        type: fixed
+        value: 184
+      y:
+        type: fixed
+        value: 118
+      anchor:
+        x: 0
+        y: 0
+      imageName: "Menu_Actor${$gameVariables.value(2)}"
+	 
+	   
+     ActorStates:
+       type: grid
+       x:
+         type: fixed
+         value: 182
+       y:
+         type: fixed
+         value: 119
+       width:
+         type: fixed
+         value: 288
+       height:
+         type: fixed
+         value: 32
+       anchor:
+         x: 0
+         y: 0
+       horizontal: true
+       limit: 8
+
+       bind: true
+       itemList: ${data.stateIcons}
+
+       components:
+         StateIcon:
+           type: icon
+           x:
+             type: fixed
+             value: 0
+           y:
+             type: fixed
+             value: 0
+           anchor:
+             x: 0
+             y: 0
+           iconSet: "IconSet"
+           iconIndex: "${data}"
+       template:
+         type: FreeLayout
+         components:
+           - StateIcon
+         x:
+           type: fixed
+           value: 0
+         y:
+           type: fixed
+           value: 0
+		 
+     BattlerName:
+       type: Text
+       x:
+         type: fixed
+         value: 530
+       y:
+         type: fixed
+         value: 264
+       textColor: rgb(0, 0, 0)
+       fontName: RistrettoPro-Regular
+       fontSize: 22
+       fontOutline: -5
+       anchor:
+         x: 0
+         y: 0
+       text: "${data.name}"
+     BattlerNickname:
+       type: Text
+       x:
+         type: fixed
+         value: 530
+       y:
+         type: fixed
+         value: 337
+       textColor: rgb(0, 0, 0)
+       fontName: RistrettoPro-Regular
+       fontSize: 22
+       fontOutline: -5
+       anchor:
+         x: 0
+         y: 0
+       text: "${data.nickname}"
+     BattlerLevel:
+       type: Text
+       x:
+         type: fixed
+         value: 530
+       y:
+         type: fixed
+         value: 296
+       textColor: rgb(0, 0, 0)
+       fontName: RistrettoPro-Regular
+       fontSize: 22
+       fontOutline: -5
+       anchor:
+         x: 0
+         y: 0
+       text: "${data.level}"
+	   
+     ActorType:
+       type: Image
+       x:
+         type: fixed
+         value: 530
+       y:
+         type: fixed
+         value: 372
+       anchor:
+         x: 0
+         y: 0
+       imageName: "ActorType_${$gameVariables.value(1)}"
+	   
+	   
+   contents:
+    type: FreeLayout
+    components: []
+
+   lunaticItems:
+    itemList: ${party.members}
+    template:
+      type: FreeLayout
+      components:
+       - ActorBG
+       - ActorHPGauge
+       - ActorMPGauge
+       - ActorHP
+       - ActorMP
+       - ActorEXPGauge
+       - ActorEXP
+       - ActorPicture
+       - ActorStates
+       - BattlerName
+       - BattlerNickname
+       - BattlerLevel
+       - ActorType
