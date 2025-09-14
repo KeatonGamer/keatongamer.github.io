@@ -1,0 +1,618 @@
+type: scene
+version: 0.1.0
+
+components:
+  Background:
+    type: Background
+    x:
+      type: percentage
+      value: 0
+    y:
+      type: percentage
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    background:
+      type: default # default | none | image
+      image: none # for image
+
+	  
+# -- Ignore Status --
+
+# This is the default Status window in RPG Maker.
+# Everything in the default window is drawn as one item, 
+# and cannot be edited separately because of this.
+# To make Status visible again, change the height and width to 100.
+	  
+  Status:
+    type: Window
+    x:
+      type: fixed
+      value: 0
+    y:
+      type: fixed
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 0
+    height:
+      type: percentage
+      value: 0
+
+    fontName: default
+    fontSize: default
+    fontOutline: default
+    fontShadow: default
+
+    lineHeight: default
+    textPadding: default
+    windowPadding: default
+
+    windowSkin: default
+    cursor: default
+    customBackground:
+      enable: false
+      image: none
+
+    columns: 1 # max for horizontal menu
+
+
+layouts:
+  MainLayout:
+    type: FreeLayout
+    components:
+      - Background
+      - Status
+
+events:
+  onSceneEnter:
+    # nothing here
+	
+	
+lunatic:
+ enable: true
+ additionMode: true
+
+ Status:
+  enable: true
+  components:
+  
+   StatusBase:
+     type: image
+     x:
+       type: fixed
+       value: -16
+     y:
+       type: fixed
+       value: -16
+
+     anchor:
+       x: 0
+       y: 0
+     imageName: "Status_Base"
+
+	 
+   ActorName:
+     type: Text
+     x:
+       type: fixed
+       value: 28
+     y:
+       type: fixed
+       value: 126
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.name}"
+  
+   ActorLevel:
+     type: Text
+     x:
+       type: fixed
+       value: 216
+     y:
+       type: fixed
+       value: 126
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.level}"
+  
+   CurrentAttack:
+     type: Text
+     x:
+       type: fixed
+       value: 46
+     y:
+       type: fixed
+       value: 166
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.param(2)}"
+   CurrentDefense:
+     type: Text
+     x:
+       type: fixed
+       value: 216
+     y:
+       type: fixed
+       value: 166
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.param(3)}"
+   CurrentMagic:
+     type: Text
+     x:
+       type: fixed
+       value: 46
+     y:
+       type: fixed
+       value: 204
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.param(4)}"
+   CurrentMdf:
+     type: Text
+     x:
+       type: fixed
+       value: 216
+     y:
+       type: fixed
+       value: 204
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.param(5)}"
+   CurrentAgility:
+     type: Text
+     x:
+       type: fixed
+       value: 46
+     y:
+       type: fixed
+       value: 240
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.param(6)}"
+   CurrentLuck:
+     type: Text
+     x:
+       type: fixed
+       value: 216
+     y:
+       type: fixed
+       value: 240
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     fontShadow: default
+     textColor: rgb(0, 0, 0)
+     text: "${actor.param(7)}"
+	 
+   ActorPicture:
+     type: image
+     x:
+       type: fixed
+       value: 320
+     y:
+       type: fixed
+       value: 157
+     imageName: "Menu_Actor${$gameVariables.value(2)}"	   
+	   
+   BattlerHPGauge:
+     type: gauge
+     x:
+       type: fixed
+       value: 319
+     y:
+       type: fixed
+       value: -14
+     anchor:
+       x: 0
+       y: 0
+     pivot:
+       x: 0
+       y: 0
+
+     bind: true
+     width:
+       type: fixed
+       value: 291
+     height:
+       type: fixed
+       value: 46
+     gaugeOutline:
+       enable: true
+       lineWidth: 1
+       lineColor: rgba(16, 16, 16, 1)
+     gaugeColor1: "rgb(205, 0, 141)"
+     gaugeColor2: "rgb(255, 98, 141)"
+     rate: ${actor.hpRate}
+	  
+   BattlerHP:
+     type: Text
+     x:
+       type: fixed
+       value: 370
+     y:
+       type: fixed
+       value: -6
+     anchor:
+       x: 1
+       y: 0
+
+     bind: true
+     fontName: RistrettoPro-Regular
+     fontOutline: -5
+     fontSize: 20
+     textColor: rgb(255, 255, 255)
+     text: "${actor.hp}/${actor.mhp}"
+	 
+   BattlerMPGauge:
+     type: gauge
+     x:
+       type: fixed
+       value: 319
+     y:
+       type: fixed
+       value: 38
+     anchor:
+       x: 0
+       y: 0
+     pivot:
+       x: 0
+       y: 0
+
+     bind: true
+     width:
+       type: fixed
+       value: 291
+     height:
+       type: fixed
+       value: 46
+     gaugeOutline:
+       enable: true
+       lineWidth: 1
+       lineColor: rgba(16, 16, 16, 1)
+     gaugeColor1: "rgb(5, 37, 223)"
+     gaugeColor2: "rgb(55, 137, 223)"
+     rate: ${actor.mpRate}
+	  
+   BattlerMP:
+     type: Text
+     x:
+       type: fixed
+       value: 370
+     y:
+       type: fixed
+       value: 46
+     anchor:
+       x: 1
+       y: 0
+
+     bind: true
+     fontName: RistrettoPro-Regular
+     fontOutline: -5
+     fontSize: 20
+     textColor: rgb(255, 255, 255)
+     text: "${actor.mp}/${actor.mmp}"
+	 
+   BattlerEXPGauge:
+     type: gauge
+     x:
+       type: fixed
+       value: 319
+     y:
+       type: fixed
+       value: 90
+     anchor:
+       x: 0
+       y: 0
+     pivot:
+       x: 0
+       y: 0
+
+     bind: true
+     width:
+       type: fixed
+       value: 291
+     height:
+       type: fixed
+       value: 46
+     gaugeOutline:
+       enable: true
+       lineWidth: 1
+       lineColor: rgba(16, 16, 16, 1)
+     gaugeColor1: "rgb(173, 53, 55)"
+     gaugeColor2: "rgb(223, 153, 55)"
+     rate: ${actor.expRate()}
+	  
+   BattlerEXP:
+     type: Text
+     x:
+       type: fixed
+       value: 370
+     y:
+       type: fixed
+       value: 98
+     anchor:
+       x: 1
+       y: 0
+
+     bind: true
+     fontName: RistrettoPro-Regular
+     fontOutline: -5
+     fontSize: 20
+     textColor: rgb(255, 255, 255)
+     text: "${actor.currentExp}/${actor.nextLevelExp}" 
+	 
+   ActorDescription:
+     type: Text
+     x:
+       type: fixed
+       value: 10
+     y:
+       type: fixed
+       value: -4
+     width:
+       type: fixed
+       value: 280
+     height:
+       type: fitLines
+       value: 2
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+     anchor:
+       x: 0
+       y: 0
+     text: "${actor.profile}"
+	 
+
+   Slot1Text:
+     type: Text
+     x:
+       type: fixed
+       value: 0
+     y:
+       type: fixed
+       value: 295
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+
+     text: "${$dataSystem.equipTypes[actor.equipSlots()[0]]}"
+
+   Slot2Text:
+     type: Text
+     x:
+       type: fixed
+       value: 0
+     y:
+       type: fixed
+       value: 330
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+
+     text: "${$dataSystem.equipTypes[actor.equipSlots()[1]]}"
+
+   Slot3Text:
+     type: Text
+     x:
+       type: fixed
+       value: 0
+     y:
+       type: fixed
+       value: 365
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+
+     text: "${$dataSystem.equipTypes[actor.equipSlots()[2]]}"
+
+   Slot4Text:
+     type: Text
+     x:
+       type: fixed
+       value: 0
+     y:
+       type: fixed
+       value: 400
+     anchor:
+       x: 0
+       y: 0
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+
+     text: "${$dataSystem.equipTypes[actor.equipSlots()[3]]}"
+	 
+	 
+	  
+   Item1Text:
+     type: Text
+     x:
+       type: fixed
+       value: 200
+     y:
+       type: fixed
+       value: 295
+     anchor:
+       x: 0
+       y: 0
+		
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+     text: "${actor.equips()[0].name}"
+	 
+   Item2Text:
+     type: Text
+     x:
+       type: fixed
+       value: 200
+     y:
+       type: fixed
+       value: 330
+     anchor:
+       x: 0
+       y: 0
+		
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+     text: "${actor.equips()[1].name}"
+	 
+   Item3Text:
+     type: Text
+     x:
+       type: fixed
+       value: 200
+     y:
+       type: fixed
+       value: 365
+     anchor:
+       x: 0
+       y: 0
+		
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+     text: "${actor.equips()[2].name}"
+	 
+   Item4Text:
+     type: Text
+     x:
+       type: fixed
+       value: 200
+     y:
+       type: fixed
+       value: 400
+     anchor:
+       x: 0
+       y: 0
+		
+     fontName: RistrettoPro-Regular
+     fontSize: 25
+     fontOutline: -5
+     textColor: rgb(0, 0, 0)
+     text: "${actor.equips()[3].name}"
+	 
+	 
+	 
+  contents:
+    type: FreeLayout
+	
+    binds:
+      itemList: actor.equips
+	
+    components: 
+      - StatusBase
+      - ActorName
+      - ActorLevel
+      - CurrentAttack
+      - CurrentDefense
+      - CurrentMagic
+      - CurrentMdf
+      - CurrentAgility
+      - CurrentLuck
+      - ActorPicture
+      - BattlerHPGauge
+      - BattlerHP
+      - BattlerMPGauge
+      - BattlerMP
+      - BattlerEXPGauge
+      - BattlerEXP
+      - ActorDescription
+      - Slot1Text
+      - Slot2Text
+      - Slot3Text
+      - Slot4Text
+      - Item1Text
+      - Item2Text
+      - Item3Text
+      - Item4Text
+	 
+  lunaticItems:
+
+    binds:
+      itemList: actor.equips
+  
+    template:
+      type: FreeLayout
+      components: []
+	  
+	  

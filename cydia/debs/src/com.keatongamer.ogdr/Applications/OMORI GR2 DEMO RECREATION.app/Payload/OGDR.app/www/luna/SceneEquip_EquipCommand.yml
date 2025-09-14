@@ -1,0 +1,92 @@
+Base:
+  type: Window
+  x:
+    type: fixed
+    value: 0
+  y:
+    type: fixed
+    value: 0
+  anchor:
+    x: 0
+    y: 0
+
+  width:
+    type: percentage
+    value: 100
+  height:
+    type: percentage
+    value: 100
+
+  fontName: default
+  fontSize: default
+  fontOutline: default
+  fontShadow: default
+
+  lineHeight: 36
+  textPadding: default
+  windowPadding: default
+  spacing: 0
+
+  windowSkin: default
+  cursor: default
+  customBackground:
+    enable: true
+    image: Equipment_Base
+
+  columns: 1
+
+
+Lunatic:
+  enable: true
+  components:
+    CommandImage:
+      type: image
+      x:
+        type: fixed
+        value: -16
+      y:
+        type: fixed
+        value: -15
+
+      verticalAtlas: 3
+      anchor:
+        x: 0
+        y: 0
+
+      bind: true
+
+      imageName: "Equipment_ChoicesIdle"
+      conditions:
+        isSelect:
+          condition: isSelect
+          config:
+            imageName: "Equipment_ChoicesSelect"
+
+  contents:
+    type: FreeLayout
+    components: []
+
+  lunaticItems:
+    x:
+      type: fixed
+      value: 0
+    y:
+      type: fixed
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    itemList: ${data}
+
+    template:
+      type: FreeLayout
+      components:
+       - CommandImage

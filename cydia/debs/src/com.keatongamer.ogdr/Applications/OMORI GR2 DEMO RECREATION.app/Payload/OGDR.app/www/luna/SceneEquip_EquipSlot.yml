@@ -1,0 +1,110 @@
+Base:
+  type: Window
+  x:
+    type: fixed
+    value: -615
+  y:
+    type: fixed
+    value: 320
+  anchor:
+    x: 0
+    y: 0
+
+  width:
+    type: fixed
+    value: 310
+  height:
+    type: fixed
+    value: 170
+
+  fontName: RistrettoPro-Regular
+  fontSize: 25
+  fontOutline: -5
+  fontShadow: default
+
+  lineHeight: 36
+  textPadding: 0
+  windowPadding: 0
+  spacing: 0
+
+  textColor: rgb(0, 0, 0)
+  
+  windowSkin: 0
+  cursor:
+    type: image
+    blink: true
+    image: Equipment_Select2
+    offset:
+      x: -20
+      y: -16
+  customBackground:
+    enable: false
+    image: 0
+    offset:
+      x: -236
+      y: -4
+
+  columns: 1 # max for horizontal menu
+
+Lunatic:
+  enable: true
+  additionMode: true
+  components:
+    SlotText:
+      type: Text
+      x:
+        type: fixed
+        value: 0
+      y:
+        type: fixed
+        value: 0
+      anchor:
+        x: 0
+        y: 0
+      textColor: rgb(0, 0, 0)
+      text: "${$dataSystem.equipTypes[actor.equipSlots()[index]]}"
+    ItemText:
+      type: Text
+      x:
+        type: fixed
+        value: 128
+      y:
+        type: fixed
+        value: 0
+      anchor:
+        x: 0
+        y: 0
+      textColor: rgb(0, 0, 0)
+      text: ""
+
+
+  contents:
+    type: FreeLayout
+    components: []
+
+  lunaticItems:
+    x:
+      type: fixed
+      value: 0
+    y:
+      type: fixed
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    binds:
+      itemList: actor.equips
+
+    template:
+      type: FreeLayout
+      components:
+        - SlotText
+        - ItemText
