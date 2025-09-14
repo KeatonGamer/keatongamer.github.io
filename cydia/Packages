@@ -3,10 +3,10 @@ Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: KeatonGamer
 Filename: ./debs/src/com.keatongamer.ogdr.deb
-Size: 89323108
-MD5sum: 2ca4ce86ccd91f98c13969ffaedf979a
-SHA1: d74fc6e7efb74ce78ef12dacffc9eb2c2125bd3c
-SHA256: 3890a470f54cf7dbd67059f36c3a709ff738e440b5f991205af4e3f396d833f6
+Size: 89246632
+MD5sum: 468db3442ba53d442fb8f1aced7f8df9
+SHA1: 91f21e86491710b6ccfaac853616a6f7e4f448b2
+SHA256: 38245bbdd42fc82866289e0ab107c7ee066bcc9a016bdf9054d2331159387de4
 Section: Games
 Homepage: http://keatongamer.github.io/cydia
 Description: A recreation based off of a surreal, horror RPG!

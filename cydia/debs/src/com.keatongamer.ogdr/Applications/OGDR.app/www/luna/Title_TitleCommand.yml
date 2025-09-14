@@ -1,0 +1,97 @@
+Base:
+  type: Window
+  x:
+    type: fixed
+    value: 270
+  y:
+    type: fixed
+    value: 350
+  anchor:
+    x: 0
+    y: 0
+
+  width:
+    type: fixed
+    value: 126
+  height:
+    type: fixed
+    value: 96
+
+  fontName: OMORI_GAME2
+  fontSize: 29
+  fontOutline: -5
+  fontShadow: default
+  textColor: rgb(0, 0, 0)
+
+  lineHeight: 24
+  textPadding: 32
+  windowPadding: 0
+
+  windowSkin: Window
+
+  cursor:
+    type: image # normal / image / none
+    blink: true
+    image: Menu_Cursor
+    offset:
+      x: -10
+      y: -10
+  
+  
+  customBackground:
+    enable: false
+    image: none
+
+  columns: 1 # max for horizontal menu
+
+Lunatic:
+  enable: true
+  components:
+    TitleText:
+      type: Text
+      x:
+        type: fixed
+        value: 10
+      y:
+        type: fixed
+        value: 0
+      anchor:
+        x: 0
+        y: 0
+      text: "${data.name}"
+      textColor: rgba(255, 255, 255, 1.0)
+      conditions:
+        isDisabled:
+          condition: "data.enabled === false"
+          config:
+            textColor: rgba(64, 64, 64, 0.7)
+
+  contents:
+    type: FreeLayout
+    components: []
+
+
+  lunaticItems:
+    x:
+      type: percentage
+      value: 0
+    y:
+      type: percentage
+      value: 0
+    anchor:
+      x: 0
+      y: 0
+
+    width:
+      type: percentage
+      value: 100
+    height:
+      type: percentage
+      value: 100
+
+    itemList: "${data}"
+
+    template:
+      type: FreeLayout
+      components:
+        - TitleText

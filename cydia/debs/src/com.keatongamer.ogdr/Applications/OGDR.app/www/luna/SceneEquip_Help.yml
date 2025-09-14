@@ -1,0 +1,35 @@
+Base:
+  type: Window
+  x:
+    type: fixed
+    value: 210
+  y:
+    type: fixed
+    value: -335
+  anchor:
+    x: 0
+    y: 0
+
+  width:
+    type: percentage
+    value: 96
+  height:
+    type: fitLines
+    value: 4
+
+  fontName: RistrettoPro-Regular
+  fontSize: 25
+  fontOutline: -5
+  fontShadow: default
+  textColor: rgb(0, 0, 0)
+
+  lineHeight: default
+  textPadding: default
+  windowPadding: default
+
+  windowSkin: 0
+  cursor: default
+  customBackground:
+    enable: false
+    image: 0
+
