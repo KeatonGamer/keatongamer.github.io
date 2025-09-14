@@ -1,0 +1,16 @@
+Package: com.keatongamer.ogdr
+Version: 1.0
+Architecture: iphoneos-arm
+Maintainer: KeatonGamer
+Filename: ./debs/src/com.keatongamer.ogdr.deb
+Size: 89323108
+MD5sum: 2ca4ce86ccd91f98c13969ffaedf979a
+SHA1: d74fc6e7efb74ce78ef12dacffc9eb2c2125bd3c
+SHA256: 3890a470f54cf7dbd67059f36c3a709ff738e440b5f991205af4e3f396d833f6
+Section: Games
+Homepage: http://keatongamer.github.io/cydia
+Description: A recreation based off of a surreal, horror RPG!
+Author: KeatonGamer <http://keatongamer.github.io/cydia>
+Depiction: http://keatongamer.github.io/cydia/depictions/?p=com.keatongamer.ogdr
+Name: OMORI GR2 DEMO RECREATION
+
