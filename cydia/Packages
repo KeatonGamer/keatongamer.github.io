@@ -2,7 +2,7 @@ Package: com.keatongamer.ogdr
 Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: KeatonGamer
-Filename: ./debs/src/com.keatongamer.ogdr.deb
+Filename: ./debs/com.keatongamer.ogdr.deb
 Size: 89246632
 MD5sum: 468db3442ba53d442fb8f1aced7f8df9
 SHA1: 91f21e86491710b6ccfaac853616a6f7e4f448b2
