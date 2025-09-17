@@ -1,15 +1,9 @@
 Package: com.keatongamer.ogdr
+Name: OMORI GR2 DEMO RECREATION
 Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: KeatonGamer <keatongamer0@gmail.com>
-Filename: ./debs/com.keatongamer.ogdr.deb
-Size: 1089608
-MD5sum: c9c3a04e8aa407d7ea1484b010371f06
-SHA1: 9744eb25981b422580f4d017cb859b15b7f56997
-SHA256: 94d783c60ab30136a6e7040f9c774bbf7460752a3eef2617b0911c14fc59ea75
 Section: Games
 Homepage: http://keatongamer.github.io
 Description: A recreation based off of a surreal, horror RPG!
 Author: KeatonGamer <keatongamer0@gmail.com>
-Name: OMORI GR2 DEMO RECREATION
-
