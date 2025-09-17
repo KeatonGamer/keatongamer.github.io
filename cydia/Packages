@@ -223,12 +223,13 @@ Version: 1.0
 Architecture: iphoneos-arm
 Maintainer: KeatonGamer <keatongamer0@gmail.com>
 Filename: ./debs/com.keatongamer.ogdr.deb
-Size: 89220608
-MD5sum: b7633e80e5e614fe0ce27124b88412b6
-SHA1: e8cf765e4ab708b4f715cebe63ab262cd996dc8a
-SHA256: 00b7f9f426a98736bb06315167a664fbffc20405c0cd1983c797d53ed4f57908
+Size: 89166648
+MD5sum: ab5fb0d62bc8bd056788ebb88afe3df3
+SHA1: 3fa25322b1f8bcbb772199ebf87d2e286d2f4e99
+SHA256: 448f44843c233cdd70e1bb5722a3922a91d95d7dbe6f0a5d995e1ed8dd9f4dc2
 Section: Games
+Homepage: http://keatongamer.github.io
 Description: A recreation based off of a surreal, horror RPG!
 Author: KeatonGamer <keatongamer0@gmail.com>
-Name: OGDR
+Name: OMORI GR2 DEMO RECREATION
 
